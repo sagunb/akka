@@ -6,12 +6,12 @@ import org.joda.time.DateTime
 class SessionActor extends Actor with ActorLogging {
   import SessionActor._
 
-  var history: collection.mutable.ListBuffer[EventReader.EventMessage] = collection.mutable.ListBuffer()
+  val history: collection.mutable.ListBuffer[EventReader.EventMessage] = collection.mutable.ListBuffer()
 
   def receive = {
     case m @ EventReader.EventMessage(sessionId, timestamp, url, referrer, browser) =>
       log.info("In SessionActor - received message: {}", m.toString)
-      history = m +: history
+      history.prepend(m)
 
     case t @ EventReader.Tick(epoch) =>
       // assert(history.nonEmpty) // don't need this
@@ -19,6 +19,11 @@ class SessionActor extends Actor with ActorLogging {
       if (diff >= 5000) {
         log.info("Session dead")
       }
+
+    case s @ EventReader.ShutDownMessage(msg) =>
+      log.info("Received terminate message: {}", msg)
+      context.stop(self)
+
   }
 }
 

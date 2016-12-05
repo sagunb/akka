@@ -29,8 +29,8 @@ class RequestProxySpec(_system: ActorSystem) extends TestKit(_system) with Impli
       val testProbe2 = TestProbe()
       val eventActor = TestActorRef[RequestProxy](RequestProxy.props)
 
-      eventActor.underlyingActor.sessions.put(1L, testProbe1.ref)
-      eventActor.underlyingActor.sessions.put(2L, testProbe2.ref)
+      eventActor.underlyingActor.updateSessions(1L, testProbe1.ref)
+      eventActor.underlyingActor.updateSessions(2L, testProbe2.ref)
 
       eventActor ! EventReader.Tick(10L)
 
