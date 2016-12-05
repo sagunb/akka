@@ -28,12 +28,6 @@ class EventReader(fileName: String, requestProxy: ActorRef) extends Actor with A
       }
       requestProxy ! ShutDownMessage("file finished.")
       context.stop(self)
-
-//    case PongActor.PongMessage(text) =>
-//      log.info("In PingActor - received message: {}", text)
-//      counter += 1
-//      if (counter == 3) context.system.shutdown()
-//      else sender() ! EventMessage("ping")
   }
 }
 
