@@ -15,7 +15,8 @@ class SessionActorSpec(_system: ActorSystem) extends TestKit(_system) with Impli
 
   "A Session actor" must {
     "store session history" in {
-      val sessionActor = TestActorRef[SessionActor](SessionActor.props)
+      val testProbe = TestProbe()
+      val sessionActor = TestActorRef[SessionActor](SessionActor.props(testProbe.ref))
 
       sessionActor ! EventReader.EventMessage(1L, 1L, "/", "google", "firefox")
       sessionActor ! EventReader.EventMessage(1L, 2L, "/", "google", "firefox")

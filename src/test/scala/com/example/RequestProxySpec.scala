@@ -15,7 +15,8 @@ class RequestProxySpec(_system: ActorSystem) extends TestKit(_system) with Impli
 
   "An Request Proxy actor" must {
     "should store all sessions" in {
-      val eventActor = TestActorRef[RequestProxy](RequestProxy.props)
+      val testProbe = TestProbe()
+      val eventActor = TestActorRef[RequestProxy](RequestProxy.props(testProbe.ref))
       eventActor ! EventReader.EventMessage(1L, 1L, "/", "google", "firefox")
       eventActor ! EventReader.EventMessage(1L, 10L, "/", "google", "firefox")
       eventActor ! EventReader.EventMessage(2L, 1L, "/", "google", "firefox")
@@ -25,9 +26,10 @@ class RequestProxySpec(_system: ActorSystem) extends TestKit(_system) with Impli
 
   "An Request Proxy actor" must {
     "send ticks to all session actors" in {
+      val testProbe = TestProbe()
       val testProbe1 = TestProbe()
       val testProbe2 = TestProbe()
-      val eventActor = TestActorRef[RequestProxy](RequestProxy.props)
+      val eventActor = TestActorRef[RequestProxy](RequestProxy.props(testProbe.ref))
 
       eventActor.underlyingActor.updateSessions(1L, testProbe1.ref)
       eventActor.underlyingActor.updateSessions(2L, testProbe2.ref)
