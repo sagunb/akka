@@ -8,7 +8,7 @@ class EventReader(fileName: String) extends Actor with ActorLogging {
   import EventReader._
 
   var counter = 0
-//  val pongActor = context.actorOf(PongActor.props, "pongActor")
+  val requestProxy = context.actorOf(RequestProxy.props, "requestProxyActor")
 
   val requestPattern = "Request\\((\\d.+),(\\d.+),(.+),(.+),(.+)\\)".r
 
@@ -21,9 +21,7 @@ class EventReader(fileName: String) extends Actor with ActorLogging {
           case requestPattern(sessionId, timestamp, url, referred, browser) =>
             EventMessage(sessionId.toLong, timestamp.toLong, url, referred, browser)
         }
-
-        log.info(message.toString)
-//        sender ! message
+        requestProxy ! message
       }
 
 //    case PongActor.PongMessage(text) =>
