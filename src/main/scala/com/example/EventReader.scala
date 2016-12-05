@@ -18,11 +18,11 @@ class EventReader(fileName: String, requestProxy: ActorRef) extends Actor with A
       for (line <- Source.fromFile(fileName).getLines()) {
         val message = line match {
           case requestPattern(sessionId, timestamp, url, referred, browser) =>
-            EventMessage(sessionId.toLong, timestamp.toLong, url, referred, browser)
             if (timestamp.toLong - currentEpoch > 100) {
               currentEpoch = timestamp.toLong
               requestProxy ! Tick(currentEpoch)
             }
+            EventMessage(sessionId.toLong, timestamp.toLong, url, referred, browser)
         }
         requestProxy ! message
       }
