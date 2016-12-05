@@ -9,16 +9,24 @@
 [debug] == resolving dependencies for default#minimal-akka-scala-seed$sources_2.11;1.0 [compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.11.6 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3723b5e2
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@56e76ed
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.6
 [debug] 	found org.scala-lang#scala-library;2.11.6 in sbt-chain
 [debug] 	[2.11.6] org.scala-lang#scala-library;2.11.6
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->default(compile)]
+[info] Resolving joda-time#joda-time;2.9.6 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1522c5c4
+[debug] sbt-chain: module revision found in cache: joda-time#joda-time;2.9.6
+[debug] 	found joda-time#joda-time;2.9.6 in sbt-chain
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-actor_2.11;2.3.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4fe8832a
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5add5083
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-actor_2.11;2.3.11
 [debug] 	found com.typesafe.akka#akka-actor_2.11;2.3.11 in sbt-chain
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->runtime]
@@ -26,7 +34,7 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe#config;1.2.1 [compile->default(compile)]
 [info] Resolving com.typesafe#config;1.2.1 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@76588c9b
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@725d4422
 [debug] sbt-chain: module revision found in cache: com.typesafe#config;1.2.1
 [debug] 	found com.typesafe#config;1.2.1 in sbt-chain
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe#config;1.2.1 [compile->runtime]
@@ -39,6 +47,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->compile]
@@ -51,6 +63,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->compile]
@@ -67,6 +83,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->compile]
@@ -79,6 +99,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->compile]
@@ -91,6 +115,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [test->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [test->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [test->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [test->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [test->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [test->compile]
@@ -101,7 +129,7 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe#config;1.2.1 [test->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-testkit_2.11;2.3.11 [test->default(compile)]
 [info] Resolving com.typesafe.akka#akka-testkit_2.11;2.3.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@cd3f22
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@14c26c35
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-testkit_2.11;2.3.11
 [debug] 	found com.typesafe.akka#akka-testkit_2.11;2.3.11 in sbt-chain
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-testkit_2.11;2.3.11 [test->runtime]
@@ -109,7 +137,7 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-testkit_2.11;2.3.11 [test->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test->default(compile)]
 [info] Resolving org.scalatest#scalatest_2.11;2.2.4 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@69e86e57
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@34a88234
 [debug] sbt-chain: module revision found in cache: org.scalatest#scalatest_2.11;2.2.4
 [debug] 	found org.scalatest#scalatest_2.11;2.2.4 in sbt-chain
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test->runtime]
@@ -117,7 +145,7 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-reflect;2.11.2 [test->default(compile)]
 [info] Resolving org.scala-lang#scala-reflect;2.11.2 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@181f0384
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@287daa13
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.11.2
 [debug] 	found org.scala-lang#scala-reflect;2.11.2 in sbt-chain
 [debug] 	[2.11.2] org.scala-lang#scala-reflect;2.11.2
@@ -126,7 +154,7 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-reflect;2.11.2 [test->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [test->default(compile)]
 [info] Resolving org.scala-lang.modules#scala-xml_2.11;1.0.2 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1cdaf8d1
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6a75a909
 [debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.11;1.0.2
 [debug] 	found org.scala-lang.modules#scala-xml_2.11;1.0.2 in sbt-chain
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [test->runtime]
@@ -143,6 +171,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->compile]
@@ -157,6 +189,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile-internal->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile-internal->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile-internal->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile-internal->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile-internal->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile-internal->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile-internal->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile-internal->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile-internal->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile-internal->compile]
@@ -173,6 +209,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->compile]
@@ -185,6 +225,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->compile]
@@ -198,6 +242,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime-internal->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime-internal->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime-internal->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime-internal->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime-internal->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime-internal->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime-internal->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime-internal->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime-internal->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime-internal->compile]
@@ -215,6 +263,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [compile->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [compile->compile]
@@ -227,6 +279,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [runtime->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [runtime->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [runtime->compile]
@@ -239,6 +295,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [test->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [test->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [test->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [test->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [test->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [test->compile]
@@ -269,6 +329,10 @@
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [test-internal->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [test-internal->compile]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->org.scala-lang#scala-library;2.11.6 [test-internal->master]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test-internal->default(compile)]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test-internal->runtime]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test-internal->compile]
+[debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->joda-time#joda-time;2.9.6 [test-internal->master]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [test-internal->default(compile)]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [test-internal->runtime]
 [debug] == resolving dependencies default#minimal-akka-scala-seed$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.11 [test-internal->compile]
@@ -352,6 +416,8 @@
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.11.6!scala-library.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.11.6!scala-library.jar
+[debug] 	[NOT REQUIRED] joda-time#joda-time;2.9.6!joda-time.jar
+[debug] 	[NOT REQUIRED] joda-time#joda-time;2.9.6!joda-time.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.11!akka-actor_2.11.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.11!akka-actor_2.11.jar
 [debug] 	[NOT REQUIRED] com.typesafe#config;1.2.1!config.jar(src)
@@ -369,7 +435,7 @@
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.3!scala-xml_2.11.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.3!scala-parser-combinators_2.11.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.12.1!jline.jar(src)
-[debug] :: resolution report :: resolve 136ms :: artifacts dl 21ms
+[debug] :: resolution report :: resolve 139ms :: artifacts dl 21ms
 [debug] 	report for default#minimal-akka-scala-seed$sources_2.11;1.0 compile produced in /Users/sagun/gitRepos/minimal-akka-scala-seed/target/resolution-cache/reports/default-minimal-akka-scala-seed$sources_2.11-compile.xml
 [debug] 	report for default#minimal-akka-scala-seed$sources_2.11;1.0 runtime produced in /Users/sagun/gitRepos/minimal-akka-scala-seed/target/resolution-cache/reports/default-minimal-akka-scala-seed$sources_2.11-runtime.xml
 [debug] 	report for default#minimal-akka-scala-seed$sources_2.11;1.0 test produced in /Users/sagun/gitRepos/minimal-akka-scala-seed/target/resolution-cache/reports/default-minimal-akka-scala-seed$sources_2.11-test.xml
@@ -383,4 +449,4 @@
 [debug] 	report for default#minimal-akka-scala-seed$sources_2.11;1.0 docs produced in /Users/sagun/gitRepos/minimal-akka-scala-seed/target/resolution-cache/reports/default-minimal-akka-scala-seed$sources_2.11-docs.xml
 [debug] 	report for default#minimal-akka-scala-seed$sources_2.11;1.0 pom produced in /Users/sagun/gitRepos/minimal-akka-scala-seed/target/resolution-cache/reports/default-minimal-akka-scala-seed$sources_2.11-pom.xml
 [debug] 	report for default#minimal-akka-scala-seed$sources_2.11;1.0 scala-tool produced in /Users/sagun/gitRepos/minimal-akka-scala-seed/target/resolution-cache/reports/default-minimal-akka-scala-seed$sources_2.11-scala-tool.xml
-[debug] 	resolve done (136ms resolve - 21ms download)
+[debug] 	resolve done (139ms resolve - 21ms download)

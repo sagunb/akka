@@ -4,7 +4,7 @@
 		module="minimal-akka-scala-seed$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20161205102942"
+		publication="20161205120446"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -26,6 +26,9 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.6" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile);scala-tool->default(compile)" info.apiURL="http://www.scala-lang.org/api/2.11.6/">
 			<artifact name="scala-library" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="joda-time" name="joda-time" rev="2.9.6" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="joda-time" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="com.typesafe.akka" name="akka-actor_2.11" rev="2.3.11" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="akka-actor_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>

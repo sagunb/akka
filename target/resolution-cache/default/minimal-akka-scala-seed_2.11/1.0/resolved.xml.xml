@@ -4,7 +4,7 @@
 		module="minimal-akka-scala-seed_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20161205105102"
+		publication="20161205120648"
 	>
 		<description>
 		minimal-akka-scala-seed
@@ -34,6 +34,7 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.6" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.6" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="joda-time" name="joda-time" rev="2.9.6" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-actor_2.11" rev="2.3.11" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-testkit_2.11" rev="2.3.11" conf="test->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.4" conf="test->default(compile)"/>

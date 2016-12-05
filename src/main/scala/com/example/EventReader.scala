@@ -14,11 +14,15 @@ class EventReader(fileName: String, requestProxy: ActorRef) extends Actor with A
   def receive = {
     case Initialize =>
       log.info("In EventReader - starting EventReader")
+      var currentEpoch = 0L
       for (line <- Source.fromFile(fileName).getLines()) {
-
         val message = line match {
           case requestPattern(sessionId, timestamp, url, referred, browser) =>
             EventMessage(sessionId.toLong, timestamp.toLong, url, referred, browser)
+            if (timestamp.toLong - currentEpoch > 100) {
+              currentEpoch = timestamp.toLong
+              requestProxy ! Tick(currentEpoch)
+            }
         }
         requestProxy ! message
       }
@@ -39,4 +43,6 @@ object EventReader {
   case object Initialize
   case class EventMessage(sessionId: Long, timestamp: Long, url: String, referrer: String, browser: String)
   case class ShutDownMessage(msg: String)
+  case class Tick(epoch: Long)
+
 }
