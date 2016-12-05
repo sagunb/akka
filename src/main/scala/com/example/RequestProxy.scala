@@ -36,18 +36,18 @@ class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
         val sessionActor = context.actorOf(SessionActor.props(statsActor), "sessionActor" + sessionId.toString)
         context.watch(sessionActor)
         updateSessions(sessionId, sessionActor)
-        log.info("Detected new session: {}", sessionId.toString)
+        log.info("Detected new session: {}", sessionId)
       }
       sessions(sessionId) ! m
 
-    case t @ EventReader.Tick(timestamp) =>
+    case t: EventReader.Tick =>
       for (actor <- actorRefs.keys) {
-        log.info("In RequestProxy - recieved tick: {}", t.toString)
+        log.info("In RequestProxy - recieved tick: {}", t)
         actor ! t
       }
 
-    case s @ EventReader.ShutDownMessage(msg) =>
-      log.info("In RequestProxy - recieved shutdown message: {}", s.toString)
+    case s: EventReader.ShutDownMessage =>
+      log.info("In RequestProxy - recieved shutdown message: {}", s)
       for (actor <- actorRefs.keys) {
         actor ! s
       }
