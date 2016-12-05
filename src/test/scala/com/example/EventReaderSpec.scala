@@ -27,6 +27,7 @@ class EventReaderSpec(_system: ActorSystem) extends TestKit(_system) with Implic
       testActor.expectMsg(EventReader.EventMessage(795253081L, 1480534410858L, "/", "google", "firefox"))
       testActor.expectMsg(EventReader.Tick(1480534410955L))
       testActor.expectMsg(EventReader.EventMessage(795253081L, 1480534410955L, "/", "google", "firefox"))
+      testActor.expectMsg(EventReader.ShutDownMessage("file finished."))
     }
   }
 
