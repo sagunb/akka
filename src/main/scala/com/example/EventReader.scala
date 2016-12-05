@@ -10,12 +10,12 @@ class EventReader(fileName: String) extends Actor with ActorLogging {
   var counter = 0
 //  val pongActor = context.actorOf(PongActor.props, "pongActor")
 
+  val requestPattern = "Request\\((\\d.+),(\\d.+),(.+),(.+),(.+)\\)".r
+
   def receive = {
     case Initialize =>
       log.info("In EventReader - starting EventReader")
       for (line <- Source.fromFile(fileName).getLines()) {
-
-        val requestPattern = "Request\\((\\d.+),(\\d.+),(.+),(.+),(.+)\\)".r
 
         val message = line match {
           case requestPattern(sessionId, timestamp, url, referred, browser) =>
