@@ -12,6 +12,7 @@ class RequestProxy extends Actor with ActorLogging {
       log.info("In RequestProxy - received message: {}", m.toString)
       if (!sessions.contains(sessionId)) {
         val sessionActor = context.actorOf(SessionActor.props, "sessionActor" + sessionId.toString)
+        log.info("Detected new session: {}", sessionId.toString)
         sessions.put(sessionId, sessionActor)
       }
       sessions(sessionId) ! m
