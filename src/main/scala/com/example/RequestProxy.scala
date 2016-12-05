@@ -5,8 +5,8 @@ import akka.actor.{Actor, ActorLogging, ActorRef, Props, Terminated}
 class RequestProxy extends Actor with ActorLogging {
   import RequestProxy._
 
-  var sessions: collection.mutable.HashMap[Long, ActorRef] = collection.mutable.HashMap()
-  var actorRefs: collection.mutable.HashMap[ActorRef, Long] = collection.mutable.HashMap()
+  val sessions: collection.mutable.HashMap[Long, ActorRef] = collection.mutable.HashMap()
+  val actorRefs: collection.mutable.HashMap[ActorRef, Long] = collection.mutable.HashMap()
 
   def updateSessions(sessionId: Long, actorRef: ActorRef): Unit = {
     sessions.put(sessionId, actorRef)
