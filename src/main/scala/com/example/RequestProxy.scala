@@ -57,6 +57,7 @@ class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
       deleteActorRef(actorRef)
       if (actorRefs.isEmpty) {
         log.info("All children have teriminated. Terminating request proxy.")
+        statsActor ! GenerateReport("All sessions terminated")
         context.stop(self)
       }
 
@@ -65,4 +66,5 @@ class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
 
 object RequestProxy {
   def props(actorRef: ActorRef) = Props(new RequestProxy(actorRef))
+  case class GenerateReport(msg: String)
 }
