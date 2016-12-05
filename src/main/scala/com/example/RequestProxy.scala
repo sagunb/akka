@@ -38,18 +38,18 @@ class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
         updateSessions(sessionId, sessionActor)
         log.info("Detected new session: {}", sessionId)
       }
-      sessions(sessionId) ! m
+      sessions(sessionId) forward m
 
     case t: EventReader.Tick =>
       for (actor <- actorRefs.keys) {
         log.info("In RequestProxy - recieved tick: {}", t)
-        actor ! t
+        actor forward t
       }
 
     case s: EventReader.ShutDownMessage =>
       log.info("In RequestProxy - recieved shutdown message: {}", s)
       for (actor <- actorRefs.keys) {
-        actor ! s
+        actor forward s
       }
 
     case u @ Terminated(actorRef) =>
@@ -57,7 +57,7 @@ class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
       deleteActorRef(actorRef)
       if (actorRefs.isEmpty) {
         log.info("All children have teriminated. Terminating request proxy.")
-        statsActor ! GenerateReport("All sessions terminated")
+        statsActor forward GenerateReport("All sessions terminated")
         context.stop(self)
       }
 
