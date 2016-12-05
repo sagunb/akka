@@ -5,7 +5,8 @@ import akka.actor.ActorSystem
 object ApplicationMain extends App {
   val system = ActorSystem("MyActorSystem")
 //  val pingActor = system.actorOf(PingActor.props, "pingActor")
-  val eventReader = system.actorOf(EventReader.props("/Users/sagun/Downloads/exercises/events-1k.txt"), "eventReaderActor")
+  val requestProxy = system.actorOf(RequestProxy.props, "requestProxyActor")
+  val eventReader = system.actorOf(EventReader.props("/Users/sagun/Downloads/exercises/events-1k.txt", requestProxy), "eventReaderActor")
 
   eventReader ! EventReader.Initialize
 

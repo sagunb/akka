@@ -1,14 +1,13 @@
 package com.example
 
-import akka.actor.{Actor, ActorLogging, Props}
+import akka.actor.{Actor, ActorLogging, ActorRef, Props}
 
 import scala.io.Source
 
-class EventReader(fileName: String) extends Actor with ActorLogging {
+class EventReader(fileName: String, requestProxy: ActorRef) extends Actor with ActorLogging {
   import EventReader._
 
   var counter = 0
-  val requestProxy = context.actorOf(RequestProxy.props, "requestProxyActor")
 
   val requestPattern = "Request\\((\\d.+),(\\d.+),(.+),(.+),(.+)\\)".r
 
@@ -23,6 +22,8 @@ class EventReader(fileName: String) extends Actor with ActorLogging {
         }
         requestProxy ! message
       }
+      requestProxy ! ShutDownMessage("file finished.")
+      context.stop(self)
 
 //    case PongActor.PongMessage(text) =>
 //      log.info("In PingActor - received message: {}", text)
@@ -33,7 +34,9 @@ class EventReader(fileName: String) extends Actor with ActorLogging {
 }
 
 object EventReader {
-  def props(filePath: String): Props = Props(classOf[EventReader], filePath)
+//  def props(filePath: String, proxyActor: ActorRef): Props = Props(classOf[EventReader], filePath, proxyActor)
+  def props(filePath: String, proxyActor: ActorRef): Props = Props(new EventReader(filePath, proxyActor))
   case object Initialize
   case class EventMessage(sessionId: Long, timestamp: Long, url: String, referrer: String, browser: String)
+  case class ShutDownMessage(msg: String)
 }
