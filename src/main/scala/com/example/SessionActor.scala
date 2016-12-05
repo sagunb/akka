@@ -1,9 +1,9 @@
 package com.example
 
-import akka.actor.{Actor, ActorLogging, Props}
+import akka.actor.{Actor, ActorLogging, ActorRef, Props}
 import org.joda.time.DateTime
 
-class SessionActor extends Actor with ActorLogging {
+class SessionActor(statsActor: ActorRef) extends Actor with ActorLogging {
   import SessionActor._
 
   val history: collection.mutable.ListBuffer[EventReader.EventMessage] = collection.mutable.ListBuffer()
@@ -17,7 +17,8 @@ class SessionActor extends Actor with ActorLogging {
       // assert(history.nonEmpty) // don't need this
       val diff = epoch - history.head.timestamp
       if (diff >= 5000) {
-        log.info("Session dead")
+        statsActor ! History(history.toList)
+        context.stop(self)
       }
 
     case s @ EventReader.ShutDownMessage(msg) =>
@@ -28,5 +29,6 @@ class SessionActor extends Actor with ActorLogging {
 }
 
 object SessionActor {
-  val props = Props[SessionActor]
+  def props(statsActor: ActorRef): Props = Props(new SessionActor(statsActor))
+  case class History(sessionEvents: List[EventReader.EventMessage])
 }

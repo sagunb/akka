@@ -2,7 +2,7 @@ package com.example
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Props, Terminated}
 
-class RequestProxy extends Actor with ActorLogging {
+class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
   import RequestProxy._
 
   val sessions: collection.mutable.HashMap[Long, ActorRef] = collection.mutable.HashMap()
@@ -33,7 +33,7 @@ class RequestProxy extends Actor with ActorLogging {
     case m @ EventReader.EventMessage(sessionId, timestamp, url, referrer, browser) =>
       log.info("In RequestProxy - received message: {}", m.toString)
       if (!sessions.contains(sessionId)) {
-        val sessionActor = context.actorOf(SessionActor.props, "sessionActor" + sessionId.toString)
+        val sessionActor = context.actorOf(SessionActor.props(statsActor), "sessionActor" + sessionId.toString)
         context.watch(sessionActor)
         updateSessions(sessionId, sessionActor)
         log.info("Detected new session: {}", sessionId.toString)
@@ -64,5 +64,5 @@ class RequestProxy extends Actor with ActorLogging {
 }
 
 object RequestProxy {
-  val props = Props[RequestProxy]
+  def props(actorRef: ActorRef) = Props(new RequestProxy(actorRef))
 }
