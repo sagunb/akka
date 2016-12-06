@@ -31,37 +31,33 @@ class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
 
   def receive = {
     case m @ EventReader.EventMessage(sessionId, timestamp, url, referrer, browser) =>
-      log.info("In RequestProxy - received message: {}", m.toString)
       if (!sessions.contains(sessionId)) {
         val sessionActor = context.actorOf(SessionActor.props(statsActor), "sessionActor" + sessionId.toString)
         context.watch(sessionActor)
         updateSessions(sessionId, sessionActor)
-        log.info("Detected new session: {}", sessionId)
       }
       sessions(sessionId) forward m
 
     case t: EventReader.Tick =>
-      for (actor <- actorRefs.keys) {
-        log.info("In RequestProxy - recieved tick: {}", t)
-        actor forward t
-      }
+      for (actor <- actorRefs.keysIterator) actor forward t
 
     case s: EventReader.ShutDownMessage =>
-      log.info("In RequestProxy - recieved shutdown message: {}", s)
-      for (actor <- actorRefs.keys) {
-        actor forward s
-      }
+      for (actor <- actorRefs.keysIterator) actor forward s
+      context.become(terminate)
 
     case u @ Terminated(actorRef) =>
-      log.info("Child actor {} was terminated", actorRef.toString())
+      deleteActorRef(actorRef)
+  }
+
+  def terminate: Receive = {
+    case u @ Terminated(actorRef) =>
       deleteActorRef(actorRef)
       if (actorRefs.isEmpty) {
-        log.info("All children have teriminated. Terminating request proxy.")
         statsActor forward GenerateReport("All sessions terminated")
         context.stop(self)
       }
-
   }
+
 }
 
 object RequestProxy {
