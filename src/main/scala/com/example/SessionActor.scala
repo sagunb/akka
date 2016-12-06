@@ -1,6 +1,6 @@
 package com.example
 
-import akka.actor.{Actor, ActorLogging, ActorRef, Props}
+import akka.actor.{Actor, ActorLogging, ActorRef, PoisonPill, Props}
 import org.joda.time.DateTime
 
 class SessionActor(statsActor: ActorRef) extends Actor with ActorLogging {
@@ -16,7 +16,7 @@ class SessionActor(statsActor: ActorRef) extends Actor with ActorLogging {
     case t @ EventReader.Tick(epoch) =>
       // assert(history.nonEmpty) // don't need this
       val diff = epoch - history.head.timestamp
-      if (diff >= 50) {
+      if (diff >= 5000) {
         statsActor ! History(history.toList)
         context.stop(self)
       }
