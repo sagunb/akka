@@ -23,6 +23,7 @@ class SessionActor(statsActor: ActorRef) extends Actor with ActorLogging {
 
     case s @ EventReader.ShutDownMessage(msg) =>
       log.info("Received terminate message: {}", msg)
+      statsActor ! History(history.toList)
       context.stop(self)
 
   }
