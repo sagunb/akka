@@ -45,7 +45,7 @@ class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
       for (actor <- actorRefs.keysIterator) actor forward s
       context.become(terminate)
 
-    case u @ Terminated(actorRef) =>
+    case Terminated(actorRef) =>
       deleteActorRef(actorRef)
   }
 
