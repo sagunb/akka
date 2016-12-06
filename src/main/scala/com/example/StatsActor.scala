@@ -46,6 +46,24 @@ class StatsActor extends Actor with ActorLogging {
     val pw = new PrintWriter(new File(statsFile))
     pw.write(s"Total number of sessions: $numSessions\n")
     pw.write(s"Total number of events: $numEvents\n")
+    pw.write("\n----\n")
+
+    pw.write(s"Referrer counts:\n")
+    for ((referrer, count) <- referrers) pw.write(s"$referrer: $count\n")
+    pw.write("\n----\n")
+
+    pw.write(s"URL counts:\n")
+    for ((url, count) <- urlCounts) pw.write(s"$url: $count\n")
+    pw.write("\n----\n")
+
+    pw.write(s"Browser counts:\n")
+    for ((browser, count) <- browserCounts) pw.write(s"$browser: $count\n")
+    pw.write("\n----\n")
+
+    pw.write(s"QPM by minute of day:\n")
+    for ((minute, count) <- minuteCounts) pw.write(s"$minute: $count\n")
+    pw.write("\n----\n")
+
     pw.close()
   }
 
