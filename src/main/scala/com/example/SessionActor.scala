@@ -16,7 +16,7 @@ class SessionActor(statsActor: ActorRef) extends Actor with ActorLogging {
     case t @ EventReader.Tick(epoch) =>
       // assert(history.nonEmpty) // don't need this
       val diff = epoch - history.head.timestamp
-      if (diff >= 5000) {
+      if (diff >= 50) {
         statsActor ! History(history.toList)
         context.stop(self)
       }
