@@ -13,12 +13,14 @@ class StatsActor extends Actor with ActorLogging {
   val urlTimeSpans: collection.mutable.HashMap[String, List[Long]] = collection.mutable.HashMap()
   val browserCounts: collection.mutable.HashMap[String, Long] = collection.mutable.HashMap()
   var numSessions = 0
+  var numEvents = 0
 
   val statsFile = "stats.log"
 
   def receive = {
     case SessionActor.History(sessionEvents) =>
       log.info("getting messages to statsActor")
+      numSessions += 1
       updateStats(sessionEvents)
 
     case RequestProxy.GenerateReport(msg) =>
@@ -29,7 +31,7 @@ class StatsActor extends Actor with ActorLogging {
 
   private def updateStats(sessionEvents: List[EventReader.EventMessage]): Unit = {
     for (e <- sessionEvents) {
-      numSessions += 1
+      numEvents += 1
       urlCounts.update(e.url, urlCounts.getOrElse(e.url, 0L) + 1L)
       browserCounts.update(e.browser, browserCounts.getOrElse(e.browser, 0L) + 1L)
       referrers.update(e.referrer, referrers.getOrElse(e.referrer, 0L) + 1L)
@@ -42,7 +44,8 @@ class StatsActor extends Actor with ActorLogging {
 
   private def generateReport(): Unit = {
     val pw = new PrintWriter(new File(statsFile))
-    pw.write(s"Total number of sessions: $numSessions")
+    pw.write(s"Total number of sessions: $numSessions\n")
+    pw.write(s"Total number of events: $numEvents\n")
     pw.close()
   }
 
