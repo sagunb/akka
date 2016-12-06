@@ -48,6 +48,22 @@ class StatsActor extends Actor with ActorLogging {
     pw.write(s"Total number of events: $numEvents\n")
     pw.write("\n----\n")
 
+    val topLandingPages = urlCounts.toSeq.sortBy(-_._2).take(2)
+    val topBrowsers = browserCounts.toSeq.sortBy(-_._2).take(3)
+    val topReferrers = referrers.toSeq.sortBy(-_._2).take(3)
+
+    pw.write(s"Top referrer counts:\n")
+    for ((referrer, count) <- topReferrers) pw.write(s"$referrer: $count\n")
+    pw.write("\n----\n")
+
+    pw.write(s"Top browser counts:\n")
+    for ((browser, count) <- topBrowsers) pw.write(s"$browser: $count\n")
+    pw.write("\n----\n")
+
+    pw.write(s"Top landing page counts:\n")
+    for ((url, count) <- topLandingPages) pw.write(s"$url: $count\n")
+    pw.write("\n----\n")
+
     pw.write(s"Referrer counts:\n")
     for ((referrer, count) <- referrers) pw.write(s"$referrer: $count\n")
     pw.write("\n----\n")
