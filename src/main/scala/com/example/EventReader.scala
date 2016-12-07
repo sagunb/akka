@@ -22,6 +22,7 @@ class EventReader(fileName: String, requestProxy: ActorRef) extends Actor with A
               currentEpoch = timestamp.toLong
               requestProxy ! Tick(currentEpoch)
             }
+            Thread.sleep(100)
             EventMessage(sessionId.toLong, timestamp.toLong, url, referred, browser)
         }
         requestProxy ! message

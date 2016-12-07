@@ -49,7 +49,8 @@ object ApplicationMain {
       case "exit" =>
         system.shutdown()
 
-      case _ => println("Invalid command.")
+      case msg: String =>
+        requestProxy ! TerminalMessage(msg)
         commandLoop()
     }
 
@@ -62,3 +63,5 @@ object TerminalCommand {
   case object OpenSessions
   case object Events
 }
+
+case class TerminalMessage(msg: String)

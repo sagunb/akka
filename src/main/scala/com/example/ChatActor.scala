@@ -22,23 +22,24 @@ class ChatActor extends Actor with FSM[ChatActor.State, ChatActor.Data] with Act
 
   when(State.Request, State.Request.timeout) {
     case Event(StateTimeout, data) =>
-      println(s"Hi ${data.userId}, how can I help you?")
+      println(s"Hi ${data.userId.get}, how can I help you?")
       goto(State.Request)
 
     case Event(TerminalMessage(msg), data) =>
-      println(s"Have you tried searching our FAQ, ${data.userId}?")
+      println(s"Have you tried searching our FAQ, ${data.userId.get}?")
       goto(State.Resolution)
   }
 
   when(State.Resolution, State.Resolution.timeout) {
     case Event(StateTimeout, data) =>
-      println(s"Have you tried searching our FAQ, ${data.userId}?")
+      println(s"Have you tried searching our FAQ, ${data.userId.get}?")
       goto(State.Resolution)
 
     case Event(TerminalMessage(msg), data) =>
       msg match {
         case "yes" => println("We'll get a human being to call your number, bye.")
         case "no" => println("You can find our faq here: www.example.com")
+        case _ => println("")
       }
       stop()
   }

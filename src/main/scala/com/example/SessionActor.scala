@@ -20,6 +20,9 @@ class SessionActor(statsActor: ActorRef) extends Actor with ActorLogging {
       }
       history.prepend(m)
 
+    case msg: TerminalMessage =>
+      chatActor forward msg
+
     case t @ EventReader.Tick(epoch) =>
       // assert(history.nonEmpty) // don't need this
       val diff = epoch - history.head.timestamp
