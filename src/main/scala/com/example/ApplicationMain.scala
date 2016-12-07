@@ -8,6 +8,7 @@ import scala.annotation.tailrec
 import scala.io.StdIn
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.util.{Failure, Success}
 
 object ApplicationMain {
 
@@ -23,15 +24,16 @@ object ApplicationMain {
     commandLoop()
   }
 
-  @tailrec
   def commandLoop(): Unit = {
     println("Enter a command: [sessions|events|exit]")
 
     StdIn.readLine() match {
       case "sessions" =>
         val numSessions = requestProxy ? TerminalCommand.Sessions
-        numSessions.foreach(sessions => println(s"Num sessions: $sessions"))
-        commandLoop()
+        numSessions.onComplete {
+          case Success(value) => println(s"Sessions active: $value"); commandLoop()
+          case Failure(e) => println(s"Unable to retrieve sessions due to: $e"); commandLoop()
+        }
 
       case "events" =>
         val numSessions = requestProxy ? TerminalCommand.Events
