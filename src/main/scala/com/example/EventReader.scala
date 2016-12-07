@@ -12,7 +12,7 @@ class EventReader(fileName: String, requestProxy: ActorRef) extends Actor with A
   val requestPattern = "Request\\((\\d.+),(\\d.+),(.+),(.+),(.+)\\)".r
 
   def receive = {
-    case Initialize =>
+    case Read =>
       log.info("In EventReader - starting EventReader")
       var currentEpoch = 0L
       for (line <- Source.fromFile(fileName).getLines()) {
@@ -34,7 +34,7 @@ class EventReader(fileName: String, requestProxy: ActorRef) extends Actor with A
 object EventReader {
 //  def props(filePath: String, proxyActor: ActorRef): Props = Props(classOf[EventReader], filePath, proxyActor)
   def props(filePath: String, proxyActor: ActorRef): Props = Props(new EventReader(filePath, proxyActor))
-  case object Initialize
+  case object Read
   case class EventMessage(sessionId: Long, timestamp: Long, url: String, referrer: String, browser: String)
   case class ShutDownMessage(msg: String)
   case class Tick(epoch: Long)
