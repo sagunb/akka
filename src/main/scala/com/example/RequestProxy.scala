@@ -38,6 +38,9 @@ class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
       }
       sessions(sessionId) forward msg
 
+    case TerminalCommand.OpenSessions =>
+      sender ! sessions.size
+
     case tick: EventReader.Tick =>
       for (actor <- actorRefs.keysIterator) actor forward tick
 

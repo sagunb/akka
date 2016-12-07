@@ -4,7 +4,6 @@ import akka.actor.ActorSystem
 import akka.pattern.ask
 import akka.util.Timeout
 
-import scala.annotation.tailrec
 import scala.io.StdIn
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -25,13 +24,20 @@ object ApplicationMain {
   }
 
   def commandLoop(): Unit = {
-    println("Enter a command: [sessions|events|exit]")
+    println("Enter a command: [openSessions|completedSessions|events|exit]")
 
     StdIn.readLine() match {
-      case "sessions" =>
-        val numSessions = statsActor ? TerminalCommand.Sessions
+      case "openSessions" =>
+        val numSessions = requestProxy ? TerminalCommand.OpenSessions
         numSessions.onComplete {
           case Success(value) => println(s"Sessions active: $value"); commandLoop()
+          case Failure(e) => println(s"Unable to retrieve sessions due to: $e"); commandLoop()
+        }
+
+      case "completedSessions" =>
+        val numSessions = statsActor ? TerminalCommand.CompletedSessions
+        numSessions.onComplete {
+          case Success(value) => println(s"Sessions completed: $value"); commandLoop()
           case Failure(e) => println(s"Unable to retrieve sessions due to: $e"); commandLoop()
         }
 
@@ -52,6 +58,7 @@ object ApplicationMain {
 }
 
 object TerminalCommand {
-  case object Sessions
+  case object CompletedSessions
+  case object OpenSessions
   case object Events
 }

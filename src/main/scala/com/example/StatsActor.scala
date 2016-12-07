@@ -27,7 +27,7 @@ class StatsActor extends Actor with ActorLogging {
       log.info("Generate report requested: {}", msg)
       generateReport()
 
-    case TerminalCommand.Sessions =>
+    case TerminalCommand.CompletedSessions =>
       sender ! numSessions
 
     case TerminalCommand.Events =>
