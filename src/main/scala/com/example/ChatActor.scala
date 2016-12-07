@@ -13,17 +13,17 @@ class ChatActor extends Actor with FSM[ChatActor.State, ChatActor.Data] with Act
 
   when(State.Initialize, State.Initialize.timeout) {
     case Event(StateTimeout, data) =>
-      goto(State.Initialize)
+      stay
 
     case Event(TerminalMessage(msg), data) =>
       println(s"Hi $msg, how can I help you?")
-      goto(State.Request) using Data(Option(msg))
+      goto(State.Request) using Data(Some(msg))
   }
 
   when(State.Request, State.Request.timeout) {
     case Event(StateTimeout, data) =>
       println(s"Hi ${data.userId.get}, how can I help you?")
-      goto(State.Request)
+      stay
 
     case Event(TerminalMessage(msg), data) =>
       println(s"Have you tried searching our FAQ, ${data.userId.get}?")
@@ -33,7 +33,7 @@ class ChatActor extends Actor with FSM[ChatActor.State, ChatActor.Data] with Act
   when(State.Resolution, State.Resolution.timeout) {
     case Event(StateTimeout, data) =>
       println(s"Have you tried searching our FAQ, ${data.userId.get}?")
-      goto(State.Resolution)
+      stay
 
     case Event(TerminalMessage(msg), data) =>
       msg match {
