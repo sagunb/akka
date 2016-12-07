@@ -27,6 +27,12 @@ class StatsActor extends Actor with ActorLogging {
       log.info("Generate report requested: {}", msg)
       generateReport()
 
+    case TerminalCommand.Sessions =>
+      sender ! numSessions
+
+    case TerminalCommand.Events =>
+      sender ! numEvents
+
   }
 
   private def updateStats(sessionEvents: List[EventReader.EventMessage]): Unit = {

@@ -29,14 +29,14 @@ object ApplicationMain {
 
     StdIn.readLine() match {
       case "sessions" =>
-        val numSessions = requestProxy ? TerminalCommand.Sessions
+        val numSessions = statsActor ? TerminalCommand.Sessions
         numSessions.onComplete {
           case Success(value) => println(s"Sessions active: $value"); commandLoop()
           case Failure(e) => println(s"Unable to retrieve sessions due to: $e"); commandLoop()
         }
 
       case "events" =>
-        val numSessions = requestProxy ? TerminalCommand.Events
+        val numSessions = statsActor ? TerminalCommand.Events
         numSessions.foreach(sessions => println(s"Num events: $sessions"))
         commandLoop()
 
