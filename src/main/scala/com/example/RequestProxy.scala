@@ -30,19 +30,19 @@ class RequestProxy(statsActor: ActorRef) extends Actor with ActorLogging {
   }
 
   def receive = {
-    case m @ EventReader.EventMessage(sessionId, timestamp, url, referrer, browser) =>
+    case msg @ EventReader.EventMessage(sessionId, timestamp, url, referrer, browser) =>
       if (!sessions.contains(sessionId)) {
         val sessionActor = context.actorOf(SessionActor.props(statsActor), "sessionActor" + sessionId.toString)
         context.watch(sessionActor)
         updateSessions(sessionId, sessionActor)
       }
-      sessions(sessionId) forward m
+      sessions(sessionId) forward msg
 
-    case t: EventReader.Tick =>
-      for (actor <- actorRefs.keysIterator) actor forward t
+    case tick: EventReader.Tick =>
+      for (actor <- actorRefs.keysIterator) actor forward tick
 
-    case s: EventReader.ShutDownMessage =>
-      for (actor <- actorRefs.keysIterator) actor forward s
+    case shutDown: EventReader.ShutDownMessage =>
+      for (actor <- actorRefs.keysIterator) actor forward shutDown
       context.become(terminate)
 
     case Terminated(actorRef) =>
