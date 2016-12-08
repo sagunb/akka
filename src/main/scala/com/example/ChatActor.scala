@@ -44,6 +44,7 @@ class ChatActor extends Actor with FSM[ChatActor.State, ChatActor.Data] with Act
       stop()
   }
 
+  initialize()
 }
 
 object ChatActor {
